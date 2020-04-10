@@ -1,3 +1,4 @@
+# crawler.py
 
 from bs4 import BeautifulSoup
 import logging
@@ -5,16 +6,16 @@ from logging.config import fileConfig
 import requests
 import re
 
-
 fileConfig('log_config.ini')
 logger = logging.getLogger()
 
 
-class Crawler():
+class Crawler:
 
-  def __init__(self, uri):
-    self.uri = uri
-    self.domain_pattern = '^' + uri + '*'
+  def __init__(self, domain):
+    # starting by pointing to http, can handle redirect to https
+    self.uri = 'http://' + domain.lower()
+    self.domain_pattern = '^https?://' + domain.lower() + '/*'
 
 
   def crawl(self):
@@ -38,8 +39,8 @@ class Crawler():
 
 
 def main():
-  uri = 'https://wiprodigital.com/'
-  Crawler(uri).crawl()
+  domain = 'wiProdigital.com'
+  Crawler(domain).crawl()
 
 
 if __name__ == "__main__":
