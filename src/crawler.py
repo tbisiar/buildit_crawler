@@ -38,9 +38,8 @@ class Crawler:
 def check_link(link, domain_pattern, current_depth, max_depth):
   href = link.get('href')
   is_match = check_domain(href, domain_pattern)
-  is_already_visited = check_already_visited(href)
-  log_link_info(is_match, is_already_visited, current_depth, href)
   if is_match:
+    is_already_visited = check_already_visited(href)
     log_link_info(is_match, is_already_visited, current_depth, href)
     if not check_already_visited(href):
       trimmed_href = re.sub(HTTP_REGEX, '', href)
