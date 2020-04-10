@@ -6,22 +6,35 @@ This application was build with python 3.8.1, to manage multiple python installa
 
 ### pyenv setup
 Install pyenv using homebrew:
-`brew update && brew install pyenv`
+
+    brew update && brew install pyenv
 
 Ensure pyenv has access to python 3.8.1
-`pyenv install 3.8.1`
+    
+    pyenv install 3.8.1
 
-Verify python & pip versions:
-`python --version` - should return `Python 3.8.1`
-`pip --version` - should return something like `pip 20.0.2 from /Users/tbisiar/.pyenv/versions/3.8.1/lib/python3.8/site-packages/pip (python 3.8)`
+Verify python & pip versions (should return `Python 3.8.1`
+ and `pip 20.0.2 from /Users/xxxxx/.pyenv/versions/3.8.1/lib/python3.8/site-packages/pip (python 3.8)`):
+
+    python --version
+
+    pip --version
+    
+### pip install
+To run the application the python libraries must be installed locally:
+
+    pip install -r requirements.txt
+
 
 ### Running the tests
 The tests can be run from the project base directory with the following command:
-`python -m unittest test.crawler_test`
+
+    python -m unittest test.crawler_test
 
 ### Running the crawler
 The crawler can be run via command line with the following argument to specify the domain to be crawled:
-`python app.py -d "wiprodigital.com"`
+
+    python app.py -d "wiprodigital.com"
 
 
 
@@ -32,19 +45,21 @@ The crawler can be run via command line with the following argument to specify t
 
 [x] Build initial POC scraper for single site
 
-[] Add tests
-
 [] Expand scraper to follow same-domain links
 
 [] Validate behavior and add more tests (may need to switch to selenium)
 
 [] Dockerize
 
+[] Flask endpoint/output
+
 [] Async
 
 [] Resiliancy
 
 * memory & performance
+
+** Need datastore?
 
 * logging
 
