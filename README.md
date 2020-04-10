@@ -1,5 +1,22 @@
 # buildit_crawler
-A simple web crawler.  Given a domain url it should visit all pages within the domain, but not follow the links to external sites such as Google or Twitter
+A simple web crawler.
+
+The crawler should be limited to one domain. Given a starting URL – say http://wiprodigital.com - it should visit all pages within the domain, but not follow the links to external sites such as Google or Twitter.
+
+The output should be a simple structured site map (this does not need to be a traditional XML sitemap - just some sort of output to reflect what your crawler has discovered) showing links to other pages under the same domain, links to external URLs, and links to static content such as images for each respective page.
+
+Please provide a README.md file that explains how to build, test, and run your solution. Also, detail anything further that you would like to achieve with more time.
+
+Once done, please make your solution available on Github and forward the link. Where possible please include your commit history to provide visibility of your thinking and working practice.
+
+What you need to share with us
+* A working crawler as per requirements above
+* A README.md explaining:
+  * How to build and run your solution (including any required installations)
+  * Reasoning and describe any trade offs
+  * Explanation of what could be done with more time
+* Project builds / runs / tests as per instruction
+
 
 ## Getting running
 This application was build with python 3.8.1, to manage multiple python installations [pyenv](https://github.com/pyenv/pyenv) is suggested.  By default mac OSX uses python 2.7 so it is essential to make sure that the correct version is being used.
@@ -59,7 +76,7 @@ The crawler can be run via command line with the following argument to specify t
 
 * memory & performance
 
-** Need datastore?
+  * Need datastore?
 
 * logging
 

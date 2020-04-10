@@ -3,7 +3,12 @@
 
 import sys, getopt
 from src.crawler import Crawler
+import logging
+from logging.config import fileConfig
 
+
+fileConfig('log_config.ini')
+logger = logging.getLogger()
 
 def main(argv):
   domain = ''
@@ -18,7 +23,11 @@ def main(argv):
         sys.exit()
     elif opt in ("-d", "--domain"):
         domain = arg
-  Crawler(domain).crawl()
+  max_depth = 3
+  site_map_set = Crawler(domain, max_depth).crawl(0)
+  logger.info('site map:')
+  for endpoint in site_map_set:
+    logger.info(endpoint)
 
 
 
